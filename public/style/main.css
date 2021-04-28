@@ -15,12 +15,21 @@ html {
 
 body {
   background-color: white;
-  border-radius: 0.5rem;
   font-size: 1.6rem;
   max-width: 96rem;
   margin: 5rem auto;
   padding: 4rem;
-  border: 1px solid black;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+picture {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+img {
+  max-width: 98%;
 }
 
 h1,

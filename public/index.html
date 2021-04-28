@@ -8,6 +8,9 @@
     <title>Document</title>
   </head>
   <body>
+    <picture>
+      <img src="img/demotime.jpg" alt="Demotime" />
+    </picture>
     <h1>Demo API</h1>
 
     <h2>Wozu dient diese API</h2>
@@ -29,6 +32,17 @@
       <li>Demo Todoliste</li>
       <li>Demo Chat</li>
     </ul>
+
+    <h2>Schnittstelle kennenlernen?</h2>
+
+    <p>
+      Um sich mit der Funktion der API vertraut zu machen, eignet sich z.B. das
+      Tool Insomnia
+    </p>
+
+    <picture>
+      <img src="./img/insomnia.gif" alt="Insomnia" align="center" />
+    </picture>
 
     <h3>Es stehen folgende URIs für die RestAPI zur Verfügung</h3>
 
@@ -203,5 +217,11 @@
       </li>
       <li>Diese Nachricht ist etwas älter <button>löschen</button></li>
     </ul>
+
+    <script type="text/javascript" src="./vendor/core.min.js"></script>
+    <script type="text/javascript" src="./vendor/feathers.js"></script>
+    <script type="text/javascript" src="./vendor/socket.io.js"></script>
+    <script type="text/javascript" src="./script/todo.js"></script>
+    <script type="text/javascript" src="./script/chat.js"></script>
   </body>
 </html>
