@@ -149,5 +149,59 @@
       &nbsp;"_id": "4Xg7W1VXz6B0shNd" <br />
       }
     </code>
+
+    <h2>Beispiel TODOliste</h2>
+
+    <p>Dieses Beispiel verwendet die RestAPI</p>
+
+    <p><input type="text" />&nbsp;<button>hinzufügen</button></p>
+
+    <ul>
+      <li>Milch kaufen <button>erledigt</button></li>
+      <li><s>Milch kaufen</s> <button>nicht erledigt</button></li>
+    </ul>
+
+    <p><button>aktualisieren</button></p>
+
+    <h2>live Chat</h2>
+
+    <p>
+      Der livechat besitzt auch eine RestAPI. Diese funktioniert genau wie die
+      todo api.
+    </p>
+
+    <h3>API Endpunkt</h3>
+
+    <p>die livechat Nachrichten befinden sich unter /api/v1/msg</p>
+
+    <h3>Datenstruktur</h3>
+
+    <code lang="json">
+      [ <br />
+      &nbsp; { <br />
+      &nbsp;&nbsp; "nachricht" : "Hallo wie geht es dir?", <br />
+      &nbsp;&nbsp; "_id" : "6a54sdf564a" <br />
+      &nbsp;}, <br />
+      &nbsp;{ <br />
+      &nbsp;&nbsp; "nachricht" : "danke gut", <br />
+      &nbsp;&nbsp; "_id" : "5a4sd6f54" <br />
+      &nbsp;} <br />
+      ] <br />
+    </code>
+    <p>
+      Zur Änderung der Daten stehen ebenfalls: POST,GET,PATCH,DELETE zur
+      Verfügung
+    </p>
+
+    <h2>Beispiel liveChat</h2>
+
+    <p>Dieses Beispiel verwendet Websockets, die Daten ändern sich "live"</p>
+    <p><input type="text" />&nbsp;<button>Absenden</button></p>
+    <ul>
+      <li>
+        Hallo wie gehts, das ist die neuste nachricht <button>löschen</button>
+      </li>
+      <li>Diese Nachricht ist etwas älter <button>löschen</button></li>
+    </ul>
   </body>
 </html>
