@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Demo API</h1>
+
+    <h2>Wozu dient diese API</h2>
+
+    <p>
+      Diese Demo API kann zum testen einer API-Anbindung verwendet werden. Sie
+      besteht aus 2 Teilen
+    </p>
+    <ul>
+      <li>RestAPI: Einmalige Datenabfragen. z.B. Todoliste</li>
+      <li>Websockets: live Daten über dauerhafte Verbindung: z.B. Livechat</li>
+    </ul>
+
+    <h2>Wie ist diese API aufgebaut</h2>
+
+    <h3>Die Hauptseite besteht aus</h3>
+    <ul>
+      <li>Beschreibung</li>
+      <li>Demo Todoliste</li>
+      <li>Demo Chat</li>
+    </ul>
+
+    <h3>Es stehen folgende URIs für die RestAPI zur Verfügung</h3>
+
+    <ul>
+      <li><b>/api/v1/todo</b> - für die Todolistenpunkte</li>
+      <li><b>/api/v1/msg</b> - für die livenachrichten</li>
+    </ul>
+
+    <p>die Daten werden im JSON Format getauscht.</p>
+
+    <h2>API Endpunkt: Todoliste</h2>
+
+    <h3>Anlegen eines neuen TODOs</h3>
+    <p><b>Post</b> /api/v1/todo</p>
+    <h4>Request</h4>
+    <code lang="json">
+      {<br />
+      "title" : "Milch kaufen", <br />
+      "erledigt" : false <br />
+      }
+    </code>
+
+    <h4>Response</h4>
+    <code lang="json">
+      { <br />
+      "title": "Milch kaufen", <br />
+      "erledigt": false, <br />
+      "_id": "4Xg7W1VXz6B0shNd" <br />
+      }
+    </code>
+
+    <p>Die <i>_id</i> wird vom Server generiert</p>
+
+    <h3>Auslesen aller todos als Array</h3>
+    <p><b>GET</b> /api/v1/todo</p>
+    <h4>Request</h4>
+    <code lang="json">
+      <i>nicht erforderlich</i>
+    </code>
+
+    <h4>Response</h4>
+    <code lang="json">
+      [ <br />
+      &nbsp;{ <br />
+      &nbsp;&nbsp;"title": "Milch kaufen", <br />
+      &nbsp;&nbsp;"erledigt": false, <br />
+      &nbsp;&nbsp;"_id": "4Xg7W1VXz6B0shNd" <br />
+      &nbsp; } <br />
+      ] <br />
+    </code>
+
+    <h3>Auslesen eines einzelnen Todos</h3>
+
+    <p><b>GET</b> /api/v1/todo/4Xg7W1VXz6B0shNd</p>
+
+    <p><i>um einen einzelnen TODO auszulesen, muss die _id bekannt sein</i></p>
+    <h4>Request</h4>
+    <code lang="json">
+      <i>nicht erforderlich</i>
+    </code>
+
+    <h4>Response</h4>
+    <code lang="json">
+      { <br />
+      &nbsp; "title": "Milch kaufen", <br />
+      &nbsp;"erledigt": false, <br />
+      &nbsp;"_id": "4Xg7W1VXz6B0shNd" <br />
+      }
+    </code>
+
+    <h3>Ändern von Feldern</h3>
+
+    <p><b>PATCH</b> /api/v1/todo/4Xg7W1VXz6B0shNd</p>
+
+    <p>
+      <i
+        >um TODOs zu ändern, muss die _id bekannt sein. Es können beliebig viele
+        Felder auf einmal geändert werden</i
+      >
+    </p>
+    <h4>Request</h4>
+    <code lang="json">
+      { <br />
+      "erledigt": true <br />
+      } <br />
+    </code>
+
+    <h4>Response</h4>
+    <code lang="json">
+      { <br />
+      &nbsp; "title": "Milch kaufen", <br />
+      &nbsp;"erledigt": <b>true</b>, <br />
+      &nbsp;"_id": "4Xg7W1VXz6B0shNd" <br />
+      }
+    </code>
+
+    <h3>Löschen ganzer Todos</h3>
+
+    <p><b>DELETE</b> /api/v1/todo/4Xg7W1VXz6B0shNd</p>
+
+    <p>
+      <i
+        >um TODOs zu löschen, muss die _id bekannt sein. Die Schnitstelle meldet
+        bei erfolgreicher löschung den Statuscode 200 + den gelöschen Datensatz
+        zurück.
+      </i>
+    </p>
+    <h4>Request</h4>
+    <code lang="json">
+      <i>nicht erforderlich</i>
+    </code>
+
+    <h4>Response</h4>
+    <code lang="json">
+      { <br />
+      &nbsp; "title": "Milch kaufen", <br />
+      &nbsp;"erledigt": true, <br />
+      &nbsp;"_id": "4Xg7W1VXz6B0shNd" <br />
+      }
+    </code>
+  </body>
+</html>
