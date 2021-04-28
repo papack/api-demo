@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/main.css" />
-    <title>Document</title>
+    <title>API-Demo</title>
   </head>
   <body>
     <picture>
@@ -168,14 +168,7 @@
 
     <p>Dieses Beispiel verwendet die RestAPI</p>
 
-    <p><input type="text" />&nbsp;<button>hinzufügen</button></p>
-
-    <ul>
-      <li>Milch kaufen <button>erledigt</button></li>
-      <li><s>Milch kaufen</s> <button>nicht erledigt</button></li>
-    </ul>
-
-    <p><button>aktualisieren</button></p>
+    <div id="todoExampleContainer"></div>
 
     <h2>live Chat</h2>
 
@@ -207,16 +200,36 @@
       Verfügung
     </p>
 
+    <h3>Websockets</h3>
+
+    <p>Für livedaten werden die gleichen Endpunkte verwendet</p>
+
+    <code lang="javascript"> socket.emit('find', '/api/v1/msg'); </code>
+
+    <p>
+      in diesem Javascript Beispiel werden alle Daten über die Websocket
+      Verbindung abgefragt.
+    </p>
+
+    <p>
+      für unity3d gibt es eine lib um Websockets zu nutzen:
+      <a href="https://github.com/endel/NativeWebSocket">Native WebSockets</a>
+    </p>
+
+    <p>
+      ein Beschreibung aller verfügbaren Methoden findest Du
+      <a href="https://docs.feathersjs.com/api/client/socketio.html#find"
+        >hier</a
+      >
+    </p>
+
     <h2>Beispiel liveChat</h2>
 
-    <p>Dieses Beispiel verwendet Websockets, die Daten ändern sich "live"</p>
-    <p><input type="text" />&nbsp;<button>Absenden</button></p>
-    <ul>
-      <li>
-        Hallo wie gehts, das ist die neuste nachricht <button>löschen</button>
-      </li>
-      <li>Diese Nachricht ist etwas älter <button>löschen</button></li>
-    </ul>
+    <p>
+      Dieses Beispiel verwendet Websockets. Es werden keine alten Daten
+      anzgeigt. Das Protkoll zeigt alle Änderungen live
+    </p>
+    <div id="chatExampleContainer"></div>
 
     <script type="text/javascript" src="./vendor/core.min.js"></script>
     <script type="text/javascript" src="./vendor/feathers.js"></script>
