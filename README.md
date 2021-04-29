@@ -3,5 +3,5 @@
 Die Demo starten:
 
 ```bash
-docker run --rm -p 3030:3030 papack/api-demo
+docker run --rm -it -p 3030:3030 papack/api-demo
 ```
